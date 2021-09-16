@@ -4,18 +4,29 @@
 
 from typing import List
 
+#Question1
 
 def convert_to_absolute(number: float) -> float:
-    return 0
+    if number < 0:
+        variable_absolue = number * -1
+    return variable_absolue
 
+#Question2
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
 
-    return [""]
+    mot = " "
+    for lettre in prefixes:
+        mot += " " + lettre + suffixe
 
+    return (mot)
+
+#Question3
 
 def prime_integer_summation() -> int:
+    []
+
     return 0
 
 
