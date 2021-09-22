@@ -8,39 +8,68 @@ from typing import List
 
 def convert_to_absolute(number: float) -> float:
     if number < 0:
-        variable_absolue = number * -1
+        variable_absolue = number * -1                     #LA SOLUTION : on aurait pu faire -------------> return abs(number)
     return variable_absolue
 
 #Question2
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
-
-    mot = " "
-    for lettre in prefixes:
-        mot += " " + lettre + suffixe
-
-    return (mot)
+    liste = []
+    for pre in prefixes:
+        mot = pre + suffixe
+        liste.append(mot)
+    return (liste)
 
 #Question3
 
 def prime_integer_summation() -> int:
-    []
+    list = []
+    nombre = 2
+    while len(list) < 100:
+        x = True
+        for i in range (2,nombre):
+            if nombre % i == 0:
+                x = False
+                break
+        if x:
+         list.append(nombre)
+        nombre += 1
 
-    return 0
-
+    return sum(list)
 
 def factorial(number: int) -> int:
-    return 0
+    factorial_value = 1
+    for n in range (2, number + 1):
+        factorial_value *= n
+
+    return factorial_value
 
 
 def use_continue() -> None:
-    pass
-
+    for i in range(1,11):
+        if i != 5:
+            continue
+        print(i)
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+    acceptance = []
+    for group in groups:
+        if len(group) > 10 or len(group) <= 3:
+            acceptance.append(False)
+            continue
+        if 25 in group:
+            acceptance.append(True)
+            continue
+        if min(group) < 18:
+            acceptance.append(False)
+            continue
+        if 50 in group and max(group) > 70:
+            acceptance.append(False)
+            continue
+        acceptance.append(True)
 
+    return acceptance
 
 def main() -> None:
     number = -4.325
